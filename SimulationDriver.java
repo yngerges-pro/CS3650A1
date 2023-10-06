@@ -5,17 +5,17 @@ import java.util.Random;
 
 public class SimulationDriver {
     public static void main(String[] args) {
-        // Create a question and configure the candidate answers
+        //question and configure the candidate answers
         List<String> candidateAnswers = new ArrayList<>();
         candidateAnswers.add("A");
         candidateAnswers.add("B");
         candidateAnswers.add("C");
         Question question = new Question("multiple-choice", candidateAnswers);
 
-        // Create a VotingService with the question
+        //VotingService with the question
         VotingService votingService = new VotingService(question);
 
-        // Simulate student submissions
+        // Simulates student submissions
         int numStudents = 10; // Adjust the number of students as needed
         Random random = new Random();
 
