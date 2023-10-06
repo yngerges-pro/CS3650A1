@@ -1,40 +1,39 @@
-package anotherpack;
-import java.util.HashMap;
-import java.util.Map;
+package AssignmentOne;
+
+import java.util.Random;
 
 public class VotingService {
-    private Question question;
-    private Map<String, String> studentAnswers; // Map to store student answers
+    public static void main(String args[]) {
+       
+        SimulationDriver name = new SimulationDriver(); //object for SimulationDriver
+        String Student_ID[] = name.sentID();
+        
+        System.out.print("Student's ID(s): ");
+        for(int i = 0; i < Student_ID.length; i++) { 
+        System.out.print(Student_ID[i] + " "); //prints the student IDS
+        }
+        System.out.println();
+        Random typenum = new Random();
+        int qtype = typenum.nextInt(1,3); //randomly chooses 1 or 2
+        String questionType = name.getExactQuestion(qtype);
 
-    // Constructor
-    public VotingService(Question question) {
-        this.question = question;
-        this.studentAnswers = new HashMap<>();
-    }
+        System.out.println(questionType); //prints question
 
-    public void submitAnswer(Student student, String answer) {
-        // student's answer
-        studentAnswers.put(student.getStudentID(), answer);
-    }
+       
+        for(int j = 0; j < Student_ID.length; j++){ //loops per student
 
-    public void displayResults() {
-        // candidate answers
-        Map<String, Integer> answerCounts = new HashMap<>();
-        for (String candidateAnswer : question.getCandidateAnswers()) {
-            answerCounts.put(candidateAnswer, 0);
+            char[] Student_Answer = name.StudentAnswer(); //stored answers
+
+            System.out.print("Student " + Student_ID[j] + " Answered: ");
+            
+            for(int k = 0; k < Student_Answer.length; k++){//loops per answer
+                System.out.print(Student_Answer[k] + " ");
+            }
+            System.out.println();
+            name.chooseRandomAnswers();
         }
 
-        // Count student answers
-        for (String studentID : studentAnswers.keySet()) {
-            String studentAnswer = studentAnswers.get(studentID);
-            answerCounts.put(studentAnswer, answerCounts.get(studentAnswer) + 1);
-        }
-
-        // Display results
-        for (String candidateAnswer : question.getCandidateAnswers()) {
-            int count = answerCounts.get(candidateAnswer);
-            System.out.println(candidateAnswer + " : " + count);
-        }
+        
+        
     }
 }
-

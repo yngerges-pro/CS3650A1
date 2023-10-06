@@ -1,26 +1,17 @@
-package anotherpack;
-public class Student {
-    private String studentID;
-    private String answer;
+package AssignmentOne;
 
-    // Constructor
-    public Student(String studentID) {
-        this.studentID = studentID;
-    }
+public class Student{
 
-    public String getStudentID() {
-        return studentID;
-    }
+    String StudentID = "";
 
-    public void submitAnswer(String answer) {
-        this.answer = answer;
-    }
-
-    public String getsubmitAnswer(){
-        return answer;
+    public Student(String StudentID) {
+        
+        this.StudentID = StudentID;
 
     }
+
+    public String getStudentID(){
+        return StudentID;
+    }
+   
 }
-
-
-

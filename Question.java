@@ -1,22 +1,23 @@
-package anotherpack;
-import java.util.List;
+package AssignmentOne;
 
 public class Question {
-    private String questionType;
-    private List<String> candidateAnswers;
 
-    // Constructor
-    public Question(String questionType, List<String> candidateAnswers) {
-        this.questionType = questionType;
-        this.candidateAnswers = candidateAnswers;
+    String question = "Question 1. which one means why? A: lol B: brb C: y d:lmk";
+    String question2 = "Question 2. which one(s) means funny A:lol B:lamo C:Hahaha D:None";
+   
+    public Question(){
+
+        "".isEmpty();
+
     }
 
-    public String getQuestionType() {
-        return questionType;
+    public String getquestion(){
+
+        return question;
+
     }
 
-    public List<String> getCandidateAnswers() {
-        return candidateAnswers;
+    public String getquestion2(){
+        return question2;
     }
 }
-
