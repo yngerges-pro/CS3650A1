@@ -13,12 +13,12 @@ public class VotingService {
     }
 
     public void submitAnswer(Student student, String answer) {
-        // Store the student's answer
+        // student's answer
         studentAnswers.put(student.getStudentID(), answer);
     }
 
     public void displayResults() {
-        // Initialize counts for candidate answers
+        // candidate answers
         Map<String, Integer> answerCounts = new HashMap<>();
         for (String candidateAnswer : question.getCandidateAnswers()) {
             answerCounts.put(candidateAnswer, 0);
