@@ -1,2 +1,2 @@
 # CS3650A1
-## Run the simulation driver java file
+## Run the Voting Service java file
